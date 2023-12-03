@@ -48,3 +48,33 @@ obj.location   # centre of volume
 # for now lets use base area to decide which part is the best base to use
 
 # next... look at DIFD and see which parts can be attached
+
+
+
+
+# import STL objects in folder, resize, centre and re-export
+import os
+folder = "/home/rms20/Github/autoassembly/parts/biplane/"
+
+for file in os.listdir(folder):
+    if file[-4:] != '.STL':
+        continue
+    full_file = folder + file
+    bpy.ops.import_mesh.stl(filepath=full_file)
+
+bpy.ops.mesh.select_all(action = 'DESELECT')
+
+# centre objects
+for obj in bpy.data.objects:
+    obj.location.x = 0
+    obj.location.y = 0
+    obj.location.z = 0
+
+
+# export all objects
+new_folder = "/home/rms20/Github/autoassembly/parts/biplane_parts/"
+for obj in bpy.data.objects:
+    if file[-4:] != '.STL':
+        continue
+    new_path = new_folder + obj.name
+    bpy.ops.export_mesh.stl(filepath=new_path, use_selection=True)
