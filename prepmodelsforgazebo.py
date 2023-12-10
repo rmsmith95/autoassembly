@@ -27,7 +27,7 @@ def model_config(file, name, description):
     with open(file, 'w') as f:
         f.write(f"""<?xml version="1.0"?>
 <model>
-  <name>%s</name>
+  <name>{name}</name>
   <version>1.0</version>
   <sdf version="1.6">model.sdf</sdf>
   <author>
@@ -35,38 +35,39 @@ def model_config(file, name, description):
     <email></email>
   </author>
   <description>
-    %s
+    {description}
   </description>
 </model>
-""" % (name, description))
+""")
 
 def model_sdf(file, name, collision, visual):
+    scale = 0.001
     with open(file, 'w') as f:
         f.write(f"""<?xml version="1.0" ?>
 <sdf version="1.6">
-  <model name="%s">
+  <model name="{name}">
     <static>true</static>
     <link name="link">
       <collision name="collision">
         <geometry>
           <mesh>
-            <scale>0.01 0.01 0.01</scale>
-            <uri>model://%s</uri>
+            <scale>{scale} {scale} {scale}</scale>
+            <uri>model://{collision}</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name="visual">
         <geometry>
           <mesh>
-            <scale>0.01 0.01 0.01</scale>
-            <uri>model://%s</uri>
+            <scale>{scale} {scale} {scale}</scale>
+            <uri>model://{visual}</uri>
           </mesh>
         </geometry>
       </visual>
     </link>
   </model>
 </sdf>
-""" % (name, collision, visual))
+""")
 
 # export all objects
 for obj in bpy.data.objects:
