@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+  <include>
+    <uri>model://1)Lower Wing</uri>
+    <pose>0.2 -0.4 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://10)Landing Gear</uri>
+    <pose>0.3 -0.4 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://11)Main Axle</uri>
+    <pose>0.4 -0.4 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://12)Wheel</uri>
+    <pose>0.5 -0.4 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://12)Wheel.001</uri>
+    <pose>0.2 -0.2 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://13)Wheel Axle</uri>
+    <pose>0.3 -0.2 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://14)Stud 6×32mm</uri>
+    <pose>0.4 -0.2 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://15)Stud 4×15mm</uri>
+    <pose>0.5 -0.2 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://16)Vertical cross bar</uri>
+    <pose>0.2 0.0 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://16)Vertical cross bar.001</uri>
+    <pose>0.3 0.0 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://2)Upper Wing</uri>
+    <pose>0.4 0.0 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://3)Fuselage</uri>
+    <pose>0.5 0.0 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://4)Motor</uri>
+    <pose>0.2 0.2 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://5)Propeller</uri>
+    <pose>0.3 0.2 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://6)Holder</uri>
+    <pose>0.4 0.2 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://7)Horizontal Tail</uri>
+    <pose>0.5 0.2 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://8)Vertical Tail</uri>
+    <pose>0.2 0.4 1.4 0 0 0</pose>
+  </include>
+
+  <include>
+    <uri>model://9)Pilot</uri>
+    <pose>0.3 0.4 1.4 0 0 0</pose>
+  </include>
+    
+    <scene>
+      <shadows>0</shadows>
+    </scene>
+
+
+    <!-- GAZEBO PLUGINS: -->
+    <!-- The following plugins must be activated for the ros2_grasping to effectively work: -->
+
+
+    <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+      <ros>
+        <namespace>/ros2_grasp</namespace>
+        <argument>model_states:=model_states</argument>
+        <argument>link_states:=link_states</argument>
+      </ros>
+      <update_rate>1.0</update_rate>
+    </plugin>
+
+
+    <plugin name="gazebo_ros_properties" filename="libgazebo_ros_properties.so">
+      <ros>
+        <namespace>/ros2_grasp</namespace>
+      </ros>
+    </plugin>
+
+
+  </world>
+</sdf>

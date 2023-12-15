@@ -4,43 +4,31 @@ This file automates creation of a product from parts
 
 import os
 import subprocess
+from program_from_difd import *
 
-# 1. Get parts path
-os.getcwd()
-
-# open blender
+cwd = os.getcwd()
 blender_exe = '/home/rms20/Downloads/blender-4.0.1-linux-x64/blender'
-blender_project = 'base.blend'
-subprocess.run([blender_exe, blender_project])
+blender_project = 'blender/assembly.blend'
 
-# load part, find COM, find base
-# part_file = '/home/rms20/Github/autoassembly/parts/biplane/1)Lower Wing.STL'
-# todo: load part, for now will be in base
+# export models to gazebo folders
+database_path = "/home/rms/Github/autoassembly/parts/database/"
+p1 = cwd + '/blender/prepmodelsforgazebo.py'
+subprocess.run([blender_exe, blender_project, p1])
 
-"""
-import bpy
+# create the gazebo world with parts layout
+world_path = "/home/rms/dev_ws/src/ros2_RobotSimulation/PandaRobot/panda_ros2_gazebo/worlds/panda.world"
+assembly_difd = '/home/rms/Github/autoassembly/parts/biplane.difd'
+p2 = cwd + '/blender/worldfile_assemblydifd.py'
+# todo: export parts layout
+subprocess.run([blender_exe, blender_project, '--python', p2, '--background'])
 
-bpy.ops.object.mode_set(mode = 'OBJECT')
-obj = bpy.context.active_object
-bpy.ops.object.mode_set(mode = 'EDIT') 
-bpy.ops.mesh.select_mode(type="VERT")
+# create difd - currently manually but parts from exporting base .blend obj pose
 
+# create the program from the difd & parts layout
+program = '/home/rms/dev_ws/src/ros2_RobotSimulation/ros2_execution/programs/cubePP.txt'
+# program = '/home/rms/Github/autoassembly/parts/program.txt'
+ap = AssemblePart(program)
+assembly = '/home/rms/Github/autoassembly/blender/assembly.blend'
+ap.assemble(assembly_difd, assembly)
 
-points = []
-min_y = 1000
-for v in obj.data.vertices:
-    if v.co.y < (min_y-0.0001):
-        points = [v]
-        min_y = v.co.y
-        bpy.ops.mesh.select_all(action = 'DESELECT')
-    elif v.co.y < (min_y+0.0001):
-        points.append(v)
-        v.select=True
-
-bpy.ops.mesh.select_all(action = 'DESELECT')
-bpy.ops.object.mode_set(mode = 'OBJECT')
-for v in points:
-    v.select = True
-bpy.ops.object.mode_set(mode = 'EDIT') 
-
-"""
+# run the program
