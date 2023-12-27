@@ -1,20 +1,19 @@
 <?xml version="1.0"?>
-<assembly name="biplane">	<part id='0' name='1)Lower Wing'>0.11 0.12 0.09 0 0 0</part>
-	<part id='1' name='10)Landing Gear'>0.11 0.12 0.09 0 0 0</part>
-	<part id='2' name='11)Main Axle'>0.11 0.12 0.09 0 0 0</part>
-	<part id='3' name='12)Wheel'>0.11 0.12 0.09 0 0 0</part>
-	<part id='4' name='12)Wheel.001'>0.11 0.12 0.09 0 0 0</part>
-	<part id='5' name='13)Wheel Axle'>0.11 0.12 0.09 0 0 0</part>
-	<part id='6' name='14)Stud 6×32mm'>0.11 0.12 0.09 0 0 0</part>
-	<part id='7' name='15)Stud 4×15mm'>0.11 0.12 0.09 0 0 0</part>
-	<part id='8' name='16)Vertical cross bar'>0.11 0.12 0.09 0 0 0</part>
-	<part id='9' name='16)Vertical cross bar.001'>0.11 0.12 0.09 0 0 0</part>
-	<part id='10' name='2)Upper Wing'>0.11 0.12 0.09 0 0 0</part>
-	<part id='11' name='3)Fuselage'>0.11 0.12 0.09 0 0 0</part>
-	<part id='12' name='4)Motor'>0.11 0.12 0.09 0 0 0</part>
-	<part id='13' name='5)Propeller'>0.11 0.12 0.09 0 0 0</part>
-	<part id='14' name='6)Holder'>0.11 0.12 0.09 0 0 0</part>
-	<part id='15' name='7)Horizontal Tail'>0.11 0.12 0.09 0 0 0</part>
-	<part id='16' name='8)Vertical Tail'>0.11 0.12 0.09 0 0 0</part>
-	<part id='17' name='9)Pilot'>0.11 0.12 0.09 0 0 0</part>
+  <assembly name="biplane">
+	<part id='0' name='1)Lower Wing'>-0.48 0.2 0.05 0 0 0</part>
+	<part id='1' name='10)Landing Gear'>-0.49 0.2 0.03 0 0 0</part>
+	<part id='2' name='11)Wheel Axle'>-0.45 0.2 0.02 0 0 0</part>
+	<part id='3' name='12)Wheel Axle.001'>-0.52 0.2 0.02 0 0 0</part>
+	<part id='4' name='13)Stud 6×32mm'>-0.47 0.2 0.05 0 0 0</part>
+	<part id='5' name='14)Stud 4×15mm'>-0.42 0.19 0.05 0 0 0</part>
+	<part id='6' name='15)Vertical cross barL'>-0.55 0.19 0.09 0 0 0</part>
+	<part id='7' name='16)Vertical cross barR'>-0.42 0.19 0.09 0 0 0</part>
+	<part id='8' name='2)Upper Wing'>-0.49 0.19 0.12 0 0 0</part>
+	<part id='9' name='3)Fuselage'>-0.49 0.14 0.07 0 0 0</part>
+	<part id='10' name='4)Motor'>-0.49 0.23 0.08 0 0 0</part>
+	<part id='11' name='5)Propeller'>-0.49 0.25 0.08 0 0 0</part>
+	<part id='12' name='6)Holder'>-0.49 0.26 0.08 0 0 0</part>
+	<part id='13' name='7)Horizontal Tail'>-0.49 0.03 0.08 0 0 0</part>
+	<part id='14' name='8)Vertical Tail'>-0.49 0.03 0.08 0 0 0</part>
+	<part id='15' name='9)Pilot'>-0.49 0.12 0.11 0 0 0</part>
 </assembly>
